@@ -1,11 +1,16 @@
 import { Button } from "@/components/ui/button";
 import { Sparkles, Leaf, Heart } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import BookingDialog from "@/components/BookingDialog";
 import heroImage from "@/assets/hero-spa.jpg";
+import massageImage from "@/assets/massage-therapy.jpg";
 
 const Home = () => {
+  const [isBookingOpen, setIsBookingOpen] = useState(false);
+  
   const amenities = [
     {
       icon: Sparkles,
@@ -46,7 +51,11 @@ const Home = () => {
           <p className="text-xl md:text-2xl text-foreground/90 mb-8 font-light">
             Where tranquility meets transformation
           </p>
-          <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 text-lg px-8 py-6">
+          <Button 
+            size="lg" 
+            className="bg-accent text-accent-foreground hover:bg-accent/90 text-lg px-8 py-6"
+            onClick={() => setIsBookingOpen(true)}
+          >
             Book Your Escape
           </Button>
         </div>
@@ -58,11 +67,17 @@ const Home = () => {
           <h2 className="text-4xl md:text-5xl font-serif font-semibold mb-6 text-foreground animate-slide-up">
             Welcome to Serenity
           </h2>
+          <p className="text-lg text-muted-foreground leading-relaxed mb-6 animate-slide-up">
+            At The Solstice Sanctuary, we believe in the transformative power of holistic wellness. Nestled in a 
+            serene natural setting, our exclusive retreat offers a peaceful escape from the demands of modern life. 
+            Every treatment is thoughtfully designed and tailored to nurture your complete well-being—mind, body, 
+            and spirit.
+          </p>
           <p className="text-lg text-muted-foreground leading-relaxed animate-slide-up">
-            At The Solstice Sanctuary, we believe in the power of holistic wellness. Our exclusive retreat 
-            offers a peaceful escape where every treatment is tailored to nurture your well-being. Experience 
-            the art of relaxation in our thoughtfully designed sanctuary, where natural beauty and modern 
-            luxury converge.
+            Experience the art of relaxation in our carefully curated sanctuary, where natural beauty harmonizes 
+            with modern luxury. Our expert practitioners blend ancient healing traditions with cutting-edge wellness 
+            techniques, using only the finest organic and sustainably sourced products. Each visit is a journey 
+            toward balance, rejuvenation, and inner peace.
           </p>
         </div>
       </section>
@@ -94,21 +109,38 @@ const Home = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-4xl font-serif font-semibold mb-6">Signature Tranquility Massage</h2>
+              <p className="text-lg text-muted-foreground leading-relaxed mb-4">
+                Our most sought-after treatment is a transformative 90-minute journey that combines ancient 
+                healing techniques with modern therapeutic approaches. This luxurious experience begins with 
+                warm volcanic stones placed along your spine to release deep-seated tension and promote energy flow.
+              </p>
+              <p className="text-lg text-muted-foreground leading-relaxed mb-4">
+                Our master therapists use a carefully curated blend of aromatic essential oils—including 
+                lavender, bergamot, and ylang-ylang—while applying gentle acupressure to key meridian points. 
+                The treatment incorporates Swedish massage techniques, myofascial release, and energy balancing 
+                to address both physical tension and energetic blockages.
+              </p>
               <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                Our most sought-after treatment combines ancient healing techniques with modern therapeutic 
-                approaches. This 90-minute journey uses warm stones, aromatic oils, and gentle pressure points 
-                to release tension and restore inner peace.
+                Each session concludes with a calming scalp massage and warm herbal tea, leaving you in a state 
+                of profound relaxation and inner peace. Many guests report improved sleep, reduced stress, and a 
+                renewed sense of vitality that lasts for weeks.
               </p>
               <Link to="/services/signature-massage">
-                <Button className="bg-primary text-primary-foreground hover:bg-primary/90">
+                <Button className="bg-primary text-primary-foreground hover:bg-primary/90 mr-4">
                   Discover More
                 </Button>
               </Link>
+              <Button 
+                variant="outline"
+                onClick={() => setIsBookingOpen(true)}
+              >
+                Book Now
+              </Button>
             </div>
             <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-medium">
               <img 
-                src="/placeholder.svg"
-                alt="Massage therapy"
+                src={massageImage}
+                alt="Luxury spa massage therapy room with warm stones and natural elements"
                 className="w-full h-full object-cover"
               />
             </div>
@@ -125,13 +157,18 @@ const Home = () => {
           <p className="text-xl mb-8 opacity-90">
             Reserve your sanctuary experience today and discover the art of complete relaxation.
           </p>
-          <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 text-lg px-8 py-6">
+          <Button 
+            size="lg" 
+            className="bg-accent text-accent-foreground hover:bg-accent/90 text-lg px-8 py-6"
+            onClick={() => setIsBookingOpen(true)}
+          >
             Book Now
           </Button>
         </div>
       </section>
 
       <Footer />
+      <BookingDialog open={isBookingOpen} onOpenChange={setIsBookingOpen} />
     </div>
   );
 };

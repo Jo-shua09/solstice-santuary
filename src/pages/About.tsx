@@ -1,23 +1,29 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Award, Users, Heart } from "lucide-react";
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import BookingDialog from "@/components/BookingDialog";
+import aboutImage from "@/assets/about-philosophy.jpg";
 
 const About = () => {
+  const [isBookingOpen, setIsBookingOpen] = useState(false);
+  
   const values = [
     {
       icon: Award,
       title: "Excellence",
-      description: "We maintain the highest standards in every treatment and interaction"
+      description: "We maintain the highest professional standards in every treatment, interaction, and detail of our sanctuary experience"
     },
     {
       icon: Users,
       title: "Community",
-      description: "Building lasting relationships with our guests and practitioners"
+      description: "Building meaningful, lasting relationships with our guests, practitioners, and the wider wellness community we serve"
     },
     {
       icon: Heart,
       title: "Compassion",
-      description: "Approaching wellness with empathy, care, and understanding"
+      description: "Approaching wellness with deep empathy, genuine care, and a profound understanding of each individual's unique journey"
     }
   ];
 
@@ -52,33 +58,46 @@ const About = () => {
           <h1 className="text-5xl md:text-6xl font-serif font-bold mb-6 animate-fade-in">
             Our Story
           </h1>
-          <p className="text-xl text-muted-foreground animate-slide-up">
-            A commitment to holistic wellness, rooted in nature and dedicated to transformation
+          <p className="text-xl text-muted-foreground animate-slide-up max-w-3xl mx-auto">
+            A decade-long commitment to holistic wellness, deeply rooted in nature and passionately 
+            dedicated to transformation and lasting well-being
           </p>
         </div>
       </section>
 
       {/* Story */}
       <section className="py-20 px-6">
-        <div className="container mx-auto max-w-4xl">
-          <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
-            <p>
-              The Solstice Sanctuary was born from a simple yet profound belief: that true wellness 
-              emerges when we honor the deep connection between mind, body, and spirit. Founded in 2015 
-              by Dr. Elena Winters, our retreat has become a haven for those seeking respite from the 
-              demands of modern life.
-            </p>
-            <p>
-              What began as a small wellness practice has blossomed into a comprehensive sanctuary, 
-              offering an extensive menu of treatments that blend time-honored traditions with 
-              contemporary techniques. Every service we provide is grounded in evidence-based practices 
-              and delivered with the highest level of care.
-            </p>
-            <p>
-              We believe in sustainability, sourcing organic and locally-produced products whenever 
-              possible. Our commitment extends beyond the treatment room—we're dedicated to creating 
-              a positive impact on our community and the environment.
-            </p>
+        <div className="container mx-auto max-w-6xl">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-medium order-2 md:order-1">
+              <img 
+                src={aboutImage}
+                alt="Professional spa therapist performing therapeutic massage with natural oils"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="space-y-6 text-lg text-muted-foreground leading-relaxed order-1 md:order-2">
+              <p>
+                The Solstice Sanctuary was born from a simple yet profound belief: that true wellness 
+                emerges when we honor the deep, intrinsic connection between mind, body, and spirit. 
+                Founded in 2015 by Dr. Elena Winters, a renowned holistic medicine practitioner, our 
+                retreat has evolved into a haven for those seeking genuine respite from the relentless 
+                demands of modern life.
+              </p>
+              <p>
+                What began as a small, intimate wellness practice has blossomed into a comprehensive 
+                sanctuary, offering an extensive menu of treatments that thoughtfully blend time-honored 
+                healing traditions with cutting-edge contemporary techniques. Every service we provide 
+                is firmly grounded in evidence-based practices and delivered with the highest level of 
+                professional care and personal attention.
+              </p>
+              <p>
+                We believe deeply in sustainability and environmental stewardship, sourcing certified 
+                organic and locally-produced products whenever possible. Our commitment extends far 
+                beyond the treatment room—we're passionately dedicated to creating a lasting positive 
+                impact on our local community and the environment we all share.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -105,8 +124,9 @@ const About = () => {
       <section className="py-20 px-6">
         <div className="container mx-auto max-w-6xl">
           <h2 className="text-4xl font-serif font-semibold text-center mb-4">Meet Our Practitioners</h2>
-          <p className="text-center text-muted-foreground mb-16 max-w-2xl mx-auto">
-            Our team of highly trained professionals brings expertise, passion, and genuine care to every session
+          <p className="text-center text-muted-foreground mb-16 max-w-2xl mx-auto text-lg">
+            Our team of highly trained, internationally certified professionals brings expertise, passion, 
+            and genuine care to every session, creating transformative wellness experiences
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {team.map((member, index) => (
@@ -134,15 +154,20 @@ const About = () => {
             Experience Our Care
           </h2>
           <p className="text-xl mb-8 opacity-90">
-            Join us and discover what makes The Solstice Sanctuary truly special
+            Join us and discover what makes The Solstice Sanctuary a truly transformative wellness destination
           </p>
-          <button className="bg-accent text-accent-foreground hover:bg-accent/90 px-8 py-4 rounded-lg text-lg font-medium transition-colors">
+          <Button 
+            size="lg"
+            className="bg-accent text-accent-foreground hover:bg-accent/90"
+            onClick={() => setIsBookingOpen(true)}
+          >
             Book Your First Visit
-          </button>
+          </Button>
         </div>
       </section>
 
       <Footer />
+      <BookingDialog open={isBookingOpen} onOpenChange={setIsBookingOpen} />
     </div>
   );
 };

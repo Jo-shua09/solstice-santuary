@@ -2,10 +2,12 @@ import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
+import BookingDialog from "@/components/BookingDialog";
 
 const Navigation = () => {
   const location = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isBookingOpen, setIsBookingOpen] = useState(false);
 
   const navLinks = [
     { name: "Home", path: "/" },
@@ -40,7 +42,10 @@ const Navigation = () => {
                 {link.name}
               </Link>
             ))}
-            <Button className="bg-accent text-accent-foreground hover:bg-accent/90">
+            <Button 
+              className="bg-accent text-accent-foreground hover:bg-accent/90"
+              onClick={() => setIsBookingOpen(true)}
+            >
               Book Now
             </Button>
           </div>
@@ -73,13 +78,20 @@ const Navigation = () => {
                   {link.name}
                 </Link>
               ))}
-              <Button className="bg-accent text-accent-foreground hover:bg-accent/90 w-full">
+              <Button 
+                className="bg-accent text-accent-foreground hover:bg-accent/90 w-full"
+                onClick={() => {
+                  setIsBookingOpen(true);
+                  setIsMenuOpen(false);
+                }}
+              >
                 Book Now
               </Button>
             </div>
           </div>
         )}
       </div>
+      <BookingDialog open={isBookingOpen} onOpenChange={setIsBookingOpen} />
     </nav>
   );
 };

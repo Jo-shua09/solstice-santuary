@@ -1,31 +1,40 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import ServiceCard from "@/components/ServiceCard";
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import BookingDialog from "@/components/BookingDialog";
+import massageImage from "@/assets/massage-therapy.jpg";
+import facialImage from "@/assets/facial-treatment.jpg";
+import hydrotherapyImage from "@/assets/hydrotherapy.jpg";
+import bodyTreatmentImage from "@/assets/body-treatment.jpg";
 
 const Services = () => {
+  const [isBookingOpen, setIsBookingOpen] = useState(false);
+  
   const services = [
     {
       category: "Massage Therapy",
       items: [
         {
           title: "Signature Tranquility Massage",
-          description: "A harmonious blend of Swedish, deep tissue, and aromatherapy techniques",
+          description: "A harmonious blend of Swedish, deep tissue, hot stone, and aromatherapy techniques with warm volcanic stones and organic essential oils",
           duration: "90 minutes",
-          image: "/placeholder.svg",
+          image: massageImage,
           link: "/services/signature-massage"
         },
         {
           title: "Hot Stone Therapy",
-          description: "Smooth heated stones melt away tension and restore energy flow",
+          description: "Smooth heated basalt stones melt away deep-seated tension, restore energy flow, and promote profound relaxation throughout the body",
           duration: "75 minutes",
-          image: "/placeholder.svg",
+          image: massageImage,
           link: "/services/hot-stone"
         },
         {
           title: "Deep Tissue Release",
-          description: "Targeted pressure to alleviate chronic muscle tension and pain",
+          description: "Targeted therapeutic pressure techniques to alleviate chronic muscle tension, improve mobility, and address specific pain points",
           duration: "60 minutes",
-          image: "/placeholder.svg",
+          image: massageImage,
           link: "/services/deep-tissue"
         }
       ]
@@ -35,16 +44,16 @@ const Services = () => {
       items: [
         {
           title: "Botanical Glow Facial",
-          description: "Organic plant-based ingredients for radiant, rejuvenated skin",
+          description: "Organic plant-based ingredients and botanical extracts for luminous, radiant, and deeply nourished skin",
           duration: "60 minutes",
-          image: "/placeholder.svg",
+          image: facialImage,
           link: "/services/botanical-facial"
         },
         {
           title: "Age-Defying Treatment",
-          description: "Advanced techniques to reduce fine lines and restore youthful vitality",
+          description: "Advanced anti-aging techniques with peptides and antioxidants to reduce fine lines, firm skin, and restore youthful radiance",
           duration: "75 minutes",
-          image: "/placeholder.svg",
+          image: facialImage,
           link: "/services/age-defying"
         }
       ]
@@ -54,16 +63,16 @@ const Services = () => {
       items: [
         {
           title: "Mineral Soak Experience",
-          description: "Therapeutic mineral waters to detoxify and deeply relax",
+          description: "Therapeutic mineral-rich waters infused with essential oils to detoxify, ease muscle tension, and promote deep relaxation",
           duration: "45 minutes",
-          image: "/placeholder.svg",
+          image: hydrotherapyImage,
           link: "/services/mineral-soak"
         },
         {
           title: "Vichy Shower Ritual",
-          description: "Cascading water therapy combined with body exfoliation",
+          description: "Cascading warm water therapy combined with full-body exfoliation, promoting circulation and silky-smooth skin",
           duration: "60 minutes",
-          image: "/placeholder.svg",
+          image: hydrotherapyImage,
           link: "/services/vichy-shower"
         }
       ]
@@ -73,16 +82,16 @@ const Services = () => {
       items: [
         {
           title: "Complete Serenity Package",
-          description: "Full day of pampering including massage, facial, and lunch",
+          description: "Full day of holistic pampering including signature massage, facial treatment, body scrub, gourmet lunch, and unlimited relaxation lounge access",
           duration: "6 hours",
-          image: "/placeholder.svg",
+          image: bodyTreatmentImage,
           link: "/services/serenity-package"
         },
         {
           title: "Couples Retreat",
-          description: "Shared sanctuary experience with side-by-side treatments",
+          description: "Shared sanctuary experience with side-by-side treatments, private hydrotherapy, champagne, and chocolate-dipped strawberries",
           duration: "4 hours",
-          image: "/placeholder.svg",
+          image: bodyTreatmentImage,
           link: "/services/couples-retreat"
         }
       ]
@@ -99,8 +108,9 @@ const Services = () => {
           <h1 className="text-5xl md:text-6xl font-serif font-bold mb-6 animate-fade-in">
             Our Services
           </h1>
-          <p className="text-xl text-muted-foreground animate-slide-up">
-            Discover our curated collection of restorative treatments and wellness experiences
+          <p className="text-xl text-muted-foreground animate-slide-up max-w-3xl mx-auto">
+            Discover our curated collection of restorative treatments and transformative wellness experiences, 
+            each designed to nurture your mind, body, and spirit in our tranquil sanctuary
           </p>
         </div>
       </section>
@@ -135,15 +145,20 @@ const Services = () => {
             Ready to Experience Tranquility?
           </h2>
           <p className="text-xl mb-8 opacity-90">
-            Book your personalized wellness journey today
+            Book your personalized wellness journey today and experience the difference expert care makes
           </p>
-          <button className="bg-accent text-accent-foreground hover:bg-accent/90 px-8 py-4 rounded-lg text-lg font-medium transition-colors">
+          <Button 
+            size="lg"
+            className="bg-accent text-accent-foreground hover:bg-accent/90"
+            onClick={() => setIsBookingOpen(true)}
+          >
             Schedule Your Visit
-          </button>
+          </Button>
         </div>
       </section>
 
       <Footer />
+      <BookingDialog open={isBookingOpen} onOpenChange={setIsBookingOpen} />
     </div>
   );
 };
