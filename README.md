@@ -1,73 +1,68 @@
-# Welcome to your Lovable project
+# Solstice Sanctuary Escape
 
-## Project info
+A modern, responsive website for Solstice Sanctuary Escape, a luxurious spa offering a variety of wellness services including massages, facials, hydrotherapy, and body treatments. The site provides an immersive experience to book appointments, explore services, and learn about the spa's philosophy.
 
-**URL**: https://lovable.dev/projects/ca5e6f7e-092d-4e30-834b-73b3c6a73250
+## Features
 
-## How can I edit this code?
+- **Home Page**: Hero section with spa imagery, introduction to services, and call-to-action for bookings.
+- **About Page**: Details on the spa's philosophy, mission, and team.
+- **Services Page**: Comprehensive list of services with descriptions, pricing, and booking options.
+- **Service Details**: In-depth information on individual services.
+- **Gallery**: Showcase of spa facilities and treatments.
+- **Booking Dialog**: Interactive booking system for appointments.
+- **Responsive Design**: Optimized for desktop, tablet, and mobile devices.
+- **Accessibility**: Built with accessibility best practices using shadcn-ui components.
 
-There are several ways of editing your application.
+## Technologies Used
 
-**Use Lovable**
+- **Vite**: Fast build tool for modern web projects.
+- **TypeScript**: Typed JavaScript for better development experience.
+- **React**: Component-based UI library.
+- **shadcn-ui**: Modern UI components built on Radix UI and Tailwind CSS.
+- **Tailwind CSS**: Utility-first CSS framework for styling.
+- **React Router**: For client-side routing.
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/ca5e6f7e-092d-4e30-834b-73b3c6a73250) and start prompting.
+## Installation
 
-Changes made via Lovable will be committed automatically to this repo.
+To run this project locally, follow these steps:
 
-**Use your preferred IDE**
+1. **Clone the repository**:
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+   ```sh
+   git clone https://github.com/Jo-shua09/solstice-santuary.git
+   ```
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+2. **Navigate to the project directory**:
 
-Follow these steps:
+   ```sh
+   cd solstice-sanctuary-escape
+   ```
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+3. **Install dependencies**:
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+   ```sh
+   npm install
+   ```
 
-# Step 3: Install the necessary dependencies.
-npm i
+4. **Start the development server**:
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+   ```sh
+   npm run dev
+   ```
 
-**Edit a file directly in GitHub**
+   The site will be available at `http://localhost:5173` (or the port specified by Vite).
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## Usage
 
-**Use GitHub Codespaces**
+- Browse the site to explore services and information.
+- Use the navigation menu to switch between pages.
+- Click on service cards to view details and book appointments.
+- The booking dialog allows users to select dates, times, and services.
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## Contributing
 
-## What technologies are used for this project?
+Contributions are welcome! Please fork the repository and submit a pull request for any improvements or bug fixes.
 
-This project is built with:
+## License
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/ca5e6f7e-092d-4e30-834b-73b3c6a73250) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+This project is licensed under the MIT License.
