@@ -2,6 +2,10 @@
 
 A modern, responsive website for Solstice Sanctuary Escape, a luxurious spa offering a variety of wellness services including massages, facials, hydrotherapy, and body treatments. The site provides an immersive experience to book appointments, explore services, and learn about the spa's philosophy.
 
+## Live Demo
+
+Check out the live site: [https://solstice-santuary.vercel.app/](https://solstice-santuary.vercel.app/)
+
 ## Features
 
 - **Home Page**: Hero section with spa imagery, introduction to services, and call-to-action for bookings.
