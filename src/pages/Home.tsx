@@ -67,7 +67,7 @@ const Home = () => {
       </section>
 
       {/* Amenities Grid */}
-      <section className="py-20 px-6 bg-secondary">
+      <section className="py-20 md:px-6 bg-secondary">
         <div className="container mx-auto">
           <h2 className="text-4xl font-serif font-semibold text-center mb-16">Our Philosophy</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">

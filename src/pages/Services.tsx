@@ -25,7 +25,7 @@ const Services = () => {
       <Navigation />
 
       {/* Hero */}
-      <section className="pt-32 pb-20 px-6 bg-secondary">
+      <section className="pt-32 pb-20 md:px-6 bg-secondary">
         <div className="container mx-auto max-w-4xl text-center">
           <h1 className="text-5xl md:text-6xl font-serif font-bold mb-6 animate-fade-in">Our Services</h1>
           <p className="text-lg md:text-xl text-muted-foreground animate-slide-up max-w-3xl mx-auto">

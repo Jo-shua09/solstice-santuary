@@ -53,17 +53,17 @@ const About = () => {
       <Navigation />
 
       {/* Hero */}
-      <section className="pt-32 pb-20 px-6 bg-secondary">
+      <section className="pt-32 pb-20 md:px-6 bg-secondary">
         <div className="container mx-auto max-w-4xl text-center">
           <h1 className="text-5xl md:text-6xl font-serif font-bold mb-6 animate-fade-in">Our Story</h1>
-          <p className="text-xl text-muted-foreground animate-slide-up max-w-3xl mx-auto">
+          <p className="text-lg md:text-xl text-muted-foreground animate-slide-up max-w-3xl mx-auto">
             A decade-long commitment to holistic wellness, deeply rooted in nature and passionately dedicated to transformation and lasting well-being
           </p>
         </div>
       </section>
 
       {/* Story */}
-      <section className="py-20 px-6">
+      <section className="py-20 md:px-6">
         <div className="container mx-auto max-w-6xl">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-medium order-2 md:order-1">
@@ -74,7 +74,7 @@ const About = () => {
                 className="w-full h-full object-cover"
               />
             </div>
-            <div className="space-y-6 text-lg text-muted-foreground leading-relaxed order-1 md:order-2">
+            <div className="space-y-6 text-sm md:text-lg text-muted-foreground leading-relaxed order-1 md:order-2">
               <p>
                 The Solstice Sanctuary was born from a simple yet profound belief: that true wellness emerges when we honor the deep, intrinsic
                 connection between mind, body, and spirit. Founded in 2015 by Dr. Elena Winters, a renowned holistic medicine practitioner, our
@@ -96,7 +96,7 @@ const About = () => {
       </section>
 
       {/* Values */}
-      <section className="py-20 px-6 bg-secondary">
+      <section className="py-20 md:px-6 bg-secondary">
         <div className="container mx-auto max-w-6xl">
           <h2 className="text-4xl font-serif font-semibold text-center mb-16">Our Core Values</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -114,7 +114,7 @@ const About = () => {
       </section>
 
       {/* Team */}
-      <section className="py-20 px-6">
+      <section className="py-20 md:px-6">
         <div className="container mx-auto max-w-6xl">
           <h2 className="text-4xl font-serif font-semibold text-center mb-4">Meet Our Practitioners</h2>
           <p className="text-center text-muted-foreground mb-16 max-w-2xl mx-auto text-lg">
@@ -137,7 +137,7 @@ const About = () => {
       </section>
 
       {/* CTA */}
-      <section className="py-20 px-6 bg-primary text-primary-foreground">
+      <section className="py-20 md:px-6 bg-primary text-primary-foreground">
         <div className="container mx-auto max-w-4xl text-center">
           <h2 className="text-4xl font-serif font-semibold mb-6">Experience Our Care</h2>
           <p className="text-xl mb-8 opacity-90">
