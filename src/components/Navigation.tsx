@@ -24,38 +24,36 @@ const Navigation = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="text-2xl font-serif font-semibold text-foreground hover:text-primary transition-colors">
-            The Solstice Sanctuary
+            <img src="/icon-logo.png" alt="logo image" className="object-contain w-[3rem]" />
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-12">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
                 to={link.path}
                 className={`text-sm font-medium transition-colors ${
-                  isActive(link.path)
-                    ? "text-primary"
-                    : "text-foreground/70 hover:text-foreground"
+                  isActive(link.path) ? "text-primary  font-semibold" : "text-foreground/70 hover:text-foreground"
                 }`}
               >
                 {link.name}
               </Link>
             ))}
-            <Button 
-              className="bg-accent text-accent-foreground hover:bg-accent/90"
-              onClick={() => setIsBookingOpen(true)}
-            >
+            <div className="block md:hidden">
+              <Button className="bg-accent text-accent-foreground hover:bg-accent/90" onClick={() => setIsBookingOpen(true)}>
+                Book Now
+              </Button>
+            </div>
+          </div>
+          <div className="hidden md:block">
+            <Button className="bg-accent text-accent-foreground hover:bg-accent/90" onClick={() => setIsBookingOpen(true)}>
               Book Now
             </Button>
           </div>
 
           {/* Mobile Menu Button */}
-          <button
-            className="md:hidden text-foreground"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            aria-label="Toggle menu"
-          >
+          <button className="md:hidden text-foreground" onClick={() => setIsMenuOpen(!isMenuOpen)} aria-label="Toggle menu">
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
@@ -63,22 +61,20 @@ const Navigation = () => {
         {/* Mobile Navigation */}
         {isMenuOpen && (
           <div className="md:hidden pt-4 pb-2 animate-fade-in">
-            <div className="flex flex-col space-y-4">
+            <div className="flex flex-col space-y-6">
               {navLinks.map((link) => (
                 <Link
                   key={link.path}
                   to={link.path}
                   className={`text-sm font-medium transition-colors ${
-                    isActive(link.path)
-                      ? "text-primary"
-                      : "text-foreground/70 hover:text-foreground"
+                    isActive(link.path) ? "text-primary" : "text-foreground/70 hover:text-foreground"
                   }`}
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {link.name}
                 </Link>
               ))}
-              <Button 
+              <Button
                 className="bg-accent text-accent-foreground hover:bg-accent/90 w-full"
                 onClick={() => {
                   setIsBookingOpen(true);
