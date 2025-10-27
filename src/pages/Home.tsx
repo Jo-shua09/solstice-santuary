@@ -37,21 +37,53 @@ const Home = () => {
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <img src={heroImage} alt="Serene spa environment" loading="lazy" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/30 to-background/0" />
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/40 to-background/80" />
+          {/* Floating decorative elements */}
+          <div className="absolute top-28 left-10 animate-float">
+            <Sparkles className="w-6 h-6 text-primary" />
+          </div>
+          <div className="absolute top-32 right-16 animate-float-delayed">
+            <Leaf className="w-8 h-8 text-primary" />
+          </div>
+          <div className="absolute bottom-32 left-20 animate-float">
+            <Heart className="w-5 h-5 text-accent" />
+          </div>
+          <div className="absolute bottom-20 right-10 animate-float-delayed">
+            <Sparkles className="w-7 h-7 text-primary" />
+          </div>
         </div>
 
-        <div className="relative z-10 text-center px-6 max-w-4xl mx-auto animate-fade-in">
-          <h1 className="text-5xl md:text-7xl font-serif font-bold text-foreground mb-6 leading-tight">The Solstice Sanctuary</h1>
-          <p className="text-xl md:text-2xl text-foreground/90 mb-8 font-light">Where tranquility meets transformation</p>
-          <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 text-lg px-8 py-6" onClick={() => setIsBookingOpen(true)}>
-            Book Your Escape
-          </Button>
+        <div className="relative z-10 text-center px-6 max-w-5xl mx-auto animate-fade-in md:mt-12">
+          <h1 className="text-5xl md:text-8xl font-serif font-bold text-foreground mb-6 leading-tight tracking-wide">The Solstice Sanctuary</h1>
+          <p className="text-xl md:text-3xl text-foreground/90 mb-4 font-light italic">"Where tranquility meets transformation"</p>
+          <p className="text-sm md:text-lg text-foreground/80 mb-8 font-light max-w-3xl mx-auto leading-relaxed">
+            Discover the art of complete relaxation in our exclusive boutique spa retreat. Experience personalized wellness journeys that nurture your
+            mind, body, and spirit amidst serene natural beauty and luxurious comfort.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <Button
+              size="lg"
+              className="bg-accent text-accent-foreground hover:bg-accent/90 text-lg px-10 py-6 shadow-lg hover:shadow-xl transition-all duration-300"
+              onClick={() => setIsBookingOpen(true)}
+            >
+              Book Your Escape
+            </Button>
+            <Link to="/services">
+              <Button
+                size="lg"
+                variant="outline"
+                className="text-lg px-10 py-6 border-primary/30 text-primary hover:bg-primary/5 transition-all duration-300"
+              >
+                Explore Services
+              </Button>
+            </Link>
+          </div>
         </div>
       </section>
 
       {/* Welcome Section */}
-      <section className="p-10 md:py-20 px-6">
-        <div className="container md:py-0 py-10 rounded-tr-3xl rounded-bl-3xl mx-auto max-w-4xl md:text-center md:border-0 border-2 border-primary">
+      <section className="p-10 md:py-20">
+        <div className="md:py-0 py-10 mx-auto max-w-4xl md:text-center">
           <h2 className="text-4xl md:text-5xl font-serif font-semibold mb-6 text-foreground animate-slide-up">Welcome to Serenity</h2>
           <p className="md:text-lg text-sm text-muted-foreground leading-relaxed mb-6 animate-slide-up">
             At The Solstice Sanctuary, we believe in the transformative power of holistic wellness. Nestled in a serene natural setting, our exclusive
